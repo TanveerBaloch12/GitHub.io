@@ -1,193 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SRK.com - APK Upload Portal</title>
-  <!-- Google Font for modern typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Global Reset & Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #121212;
-      color: #f1f1f1;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Header */
-    header {
-      background: #1f1f1f;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #ff4a57;
-    }
-    /* Main Content (Central Upload Section) */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-    .upload-section {
-      text-align: center;
-      max-width: 600px;
-      width: 100%;
-    }
-    .upload-section h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #ff4a57;
-    }
-    .upload-container {
-      background: #1e1e1e;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-      position: relative;
-      transition: border 0.3s;
-    }
-    .upload-container.dragover {
-      border: 2px dashed #ff4a57;
-    }
-    .upload-container input[type="file"] {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer;
-      z-index: 2;
-    }
-    .upload-message {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .progress-container {
-      width: 100%;
-      background: #333;
-      border-radius: 5px;
-      overflow: hidden;
-      margin-top: 20px;
-    }
-    .progress-bar {
-      width: 0;
-      height: 10px;
-      background: linear-gradient(45deg, #ff4a57, #f94d6a);
-      transition: width 0.4s ease;
-    }
-    /* Footer */
-    footer {
-      background: #1a1a1a;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      border-top: 1px solid #333;
-    }
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .upload-section h2 { font-size: 1.5rem; }
-      .upload-container { padding: 30px; }
-      .upload-message { font-size: 1rem; }
-    }
-  </style>
-</head>
-<body>
-  <!-- Header Section -->
-  <header>
-    <h1>SRK.com</h1>
-  </header>
-  
-  <!-- Main Content with Central Upload Section -->
-  <main>
-    <section class="upload-section">
-      <h2>Upload Your APK File</h2>
-      <div class="upload-container" id="uploadContainer">
-        <div class="upload-message" id="uploadMessage">
-          Drag &amp; drop your APK file here or click to select.
-        </div>
-        <input type="file" id="fileInput" accept=".apk" />
-        <div class="progress-container">
-          <div class="progress-bar" id="progressBar"></div>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer Section -->
-  <footer>
-    &copy; 2025 SRK.com. All rights reserved.
-  </footer>
-  
-  <!-- JavaScript for Drag & Drop and Simulated Upload -->
-  <script>
-    const uploadContainer = document.getElementById('uploadContainer');
-    const fileInput = document.getElementById('fileInput');
-    const progressBar = document.getElementById('progressBar');
-    const uploadMessage = document.getElementById('uploadMessage');
+<header class="header">
+  <div class="logo">SRK.COM</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search APKs...">
+  </div>
+</header>
+<div class="apk-grid">
+  <div class="apk-card">
+    <img src="capcut-banner.jpg" alt="CapCut Pro">
+    <div class="apk-info">
+      <h3 class="apk-title">CapCut Pro APK</h3>
+      <p class="apk-desc">No Watermark • Premium Filters</p>
+      <a href="#" class="view-details">View Details</a>
+    </div>
+  </div>
+</div>
+<div class="details-container">
+  <img src="capcut-banner.jpg" class="apk-banner">
+  <h1>CapCut Pro APK</h1>
+  <div class="info-section">
+    <h2>Features</h2>
+    <ul>
+      <li>No Watermark</li>
+      <li>4K Export</li>
+    </ul>
+    <a href="#" class="download-btn">Download Now</a>
+  </div>
+</div>
 
-    // Highlight container on drag over
-    uploadContainer.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      uploadContainer.classList.add('dragover');
-    });
+<footer class="footer">
+  <p>© 2025 SRK.COM - All Rights Reserved</p>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</footer>
 
-    // Remove highlight on drag leave
-    uploadContainer.addEventListener('dragleave', (e) => {
-      e.preventDefault();
-      uploadContainer.classList.remove('dragover');
-    });
+<p>🔒 Scanned via Virustotal | 100% Safe</p>
+html/
+├── index.html          # Homepage
+├── capcut-details.html # Details Page
+├── css/
+│   └── style.css       # Styling
+└── images/             # APK Banners
 
-    // Handle file drop
-    uploadContainer.addEventListener('drop', (e) => {
-      e.preventDefault();
-      uploadContainer.classList.remove('dragover');
-      if (e.dataTransfer.files.length > 0) {
-        simulateUpload(e.dataTransfer.files[0]);
-      }
-    });
 
-    // Handle file select via click
-    fileInput.addEventListener('change', (e) => {
-      if (e.target.files.length > 0) {
-        simulateUpload(e.target.files[0]);
-      }
-    });
 
-    // Simulate file upload process with progress bar update
-    function simulateUpload(file) {
-      if (!file.name.endsWith('.apk')) {
-        uploadMessage.textContent = "Invalid file type. Please upload an APK file.";
-        return;
-      }
-      uploadMessage.textContent = `Uploading ${file.name}...`;
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += Math.random() * 15;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-          uploadMessage.textContent = "Upload Complete!";
-        }
-        progressBar.style.width = progress + '%';
-      }, 500);
-    }
-  </script>
-</body>
-</html>
