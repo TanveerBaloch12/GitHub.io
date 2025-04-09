@@ -3,339 +3,368 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dynamic & Modern Website</title>
-  <!-- Google Fonts for better typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>APK Uploader</title>
+  <!-- Google Fonts for sleek typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Global Reset */
+    /* Global Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html {
-      scroll-behavior: smooth;
-    }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #f0f2f5;
-      color: #333;
-      overflow-x: hidden;
+      font-family: 'Roboto', sans-serif;
+      background: #1a1a1a;
+      color: #f5f5f5;
+      line-height: 1.6;
     }
-    /* Loader Animation */
-    #loader {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    #loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .spinner {
-      border: 6px solid rgba(0, 0, 0, 0.1);
-      border-top: 6px solid #6D5BBA;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    /* Sticky Navbar with Transformation */
+    /* Header & Navigation */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 1000;
-      transition: padding 0.3s, background 0.3s;
-      padding: 20px 0;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    header.scrolled {
-      padding: 10px 0;
-      background: rgba(255, 255, 255, 1);
+    header h1 {
+      font-size: 2.8rem;
+      animation: fadeInDown 1s ease-in-out;
     }
     nav {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+      background: #222;
+    }
+    nav ul {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #6D5BBA;
-    }
-    .nav-links {
+      justify-content: center;
       list-style: none;
-      display: flex;
+      padding: 10px 0;
     }
-    .nav-links li {
-      margin-left: 30px;
+    nav ul li {
+      margin: 0 20px;
     }
-    .nav-links li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
+    nav ul li a {
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: background 0.3s;
     }
-    .nav-links li a:hover {
-      color: #6D5BBA;
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
-    /* Hero Section with Parallax-Look Effect */
+    /* Hero Section with Dynamic Background */
     .hero {
       position: relative;
-      height: 100vh;
-      background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      height: 90vh;
+      background: url('https://via.placeholder.com/1600x900?text=APK+Uploader') center/cover no-repeat;
     }
     .hero::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
     }
     .hero-content {
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      color: #fff;
-      animation: fadeIn 1.2s ease-out forwards;
-      opacity: 0;
+      z-index: 2;
+      animation: fadeInUp 1.2s ease-in-out;
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    .hero h1 {
-      font-size: 4rem;
+    .hero-content h2 {
+      font-size: 3rem;
       margin-bottom: 20px;
-      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    .hero p {
-      font-size: 1.5rem;
-      margin-bottom: 40px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
     }
     .btn {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
       padding: 15px 30px;
-      background: #6D5BBA;
-      color: #fff;
       border: none;
-      border-radius: 30px;
-      font-size: 1rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: transform 0.3s, background 0.3s;
+      color: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .btn:hover {
-      background: #8D58BF;
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,65,108,0.7);
     }
-    /* Section Styling */
-    section {
-      padding: 80px 20px;
+    /* Upload Section */
+    .upload-section {
+      padding: 60px 20px;
+      background: #111;
+      text-align: center;
     }
-    .container {
-      width: 90%;
+    .upload-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+    .upload-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .upload-container.dragover {
+      border: 2px dashed #ff416c;
+    }
+    .upload-container input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .upload-message {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .progress-bar {
+      width: 0;
+      height: 8px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border-radius: 4px;
+      margin-top: 20px;
+      transition: width 0.4s ease;
+    }
+    /* Recent Uploads Section */
+    .uploads-section {
+      padding: 60px 20px;
+      background: #1a1a1a;
+      text-align: center;
+    }
+    .uploads-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+    .uploads-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
       max-width: 1200px;
       margin: auto;
     }
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      color: #6D5BBA;
-    }
-    /* Dynamic Cards with Hover Effects */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    .upload-card {
+      background: #222;
+      border-radius: 8px;
       overflow: hidden;
-      transform: translateY(30px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
       opacity: 0;
-      animation: cardFade 0.8s forwards;
+      transform: translateY(20px);
     }
-    .card:nth-child(1) { animation-delay: 0.3s; }
-    .card:nth-child(2) { animation-delay: 0.5s; }
-    .card:nth-child(3) { animation-delay: 0.7s; }
-    .card img {
+    .upload-card:hover {
+      transform: translateY(-5px);
+    }
+    .upload-card img {
       width: 100%;
-      height: 180px;
+      height: 150px;
       object-fit: cover;
     }
-    .card-body {
-      padding: 20px;
+    .upload-card .card-body {
+      padding: 15px;
     }
-    .card-body h3 {
+    .upload-card .card-body h3 {
+      font-size: 1.2rem;
       margin-bottom: 10px;
-      color: #333;
     }
-    .card-body p {
-      font-size: 0.95rem;
-      color: #666;
-    }
-    @keyframes cardFade {
-      to { transform: translateY(0); opacity: 1; }
-    }
-    /* Back to Top Button */
-    #backToTop {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      background: #6D5BBA;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-    #backToTop:hover {
-      background: #8D58BF;
+    .upload-card .card-body p {
+      font-size: 0.9rem;
+      color: #aaa;
     }
     /* Footer */
     footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
+      background: #111;
       padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+    }
+    /* Keyframe Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .hero-content h2 { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
-  
-  <!-- Sticky Header and Navbar -->
-  <header id="header">
-    <nav>
-      <div class="logo">ModernSite</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Header & Navigation -->
+  <header>
+    <h1>APK Uploader</h1>
   </header>
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#upload">Upload</a></li>
+      <li><a href="#uploads">Recent Uploads</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
   
   <!-- Hero Section -->
-  <section class="hero" id="home">
+  <section class="hero" id="hero">
     <div class="hero-content">
-      <h1>Embrace the Future</h1>
-      <p>Experience dynamic design that leaves a lasting impression.</p>
-      <button class="btn" onclick="document.getElementById('about').scrollIntoView()">Discover More</button>
+      <h2>Upload Your APK Files</h2>
+      <p>Experience a modern, dynamic platform for sharing your Android apps.</p>
+      <button class="btn" onclick="scrollToSection('upload')">Upload Now</button>
     </div>
   </section>
   
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <p style="text-align: center; max-width: 800px; margin: auto;">
-        Humari team innovation aur creativity se bhari hui hai. Hum aise designs banate hain jo visual impact ke sath sath user experience ko bhi elevate karte hain.
-      </p>
+  <!-- Upload Section -->
+  <section class="upload-section" id="upload">
+    <h2>Upload Your APK</h2>
+    <div class="upload-container" id="uploadContainer">
+      <div class="upload-message" id="uploadMessage">
+        Drag & Drop your APK file here or click to select.
+      </div>
+      <input type="file" id="fileInput" accept=".apk" />
+      <div class="progress-bar" id="progressBar"></div>
     </div>
   </section>
   
-  <!-- Features / Cards Section -->
-  <section id="features" style="background: #fff;">
-    <div class="container">
-      <h2 class="section-title">Our Features</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="https://via.placeholder.com/400x180" alt="Feature 1">
-          <div class="card-body">
-            <h3>Interactive Design</h3>
-            <p>Dynamic animations and smooth transitions that captivate your audience.</p>
-          </div>
+  <!-- Recent Uploads Section -->
+  <section class="uploads-section" id="uploads">
+    <h2>Recent Uploads</h2>
+    <div class="uploads-container" id="uploadsContainer">
+      <!-- Dynamic cards will be inserted here -->
+      <div class="upload-card">
+        <img src="https://via.placeholder.com/300x150?text=APK+1" alt="APK 1">
+        <div class="card-body">
+          <h3>MyApp v1.0</h3>
+          <p>Uploaded 2 hours ago</p>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/400x180" alt="Feature 2">
-          <div class="card-body">
-            <h3>Responsive Layout</h3>
-            <p>Adaptive grid and flexible components for any screen size.</p>
-          </div>
+      </div>
+      <div class="upload-card">
+        <img src="https://via.placeholder.com/300x150?text=APK+2" alt="APK 2">
+        <div class="card-body">
+          <h3>CoolApp v2.3</h3>
+          <p>Uploaded Yesterday</p>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/400x180" alt="Feature 3">
-          <div class="card-body">
-            <h3>Modern Aesthetics</h3>
-            <p>Bold typography, vibrant colors, and appealing visuals that resonate.</p>
-          </div>
+      </div>
+      <div class="upload-card">
+        <img src="https://via.placeholder.com/300x150?text=APK+3" alt="APK 3">
+        <div class="card-body">
+          <h3>TestApp v0.9</h3>
+          <p>Uploaded 3 days ago</p>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p style="text-align: center; max-width: 800px; margin: auto;">
-        Hum se contact karne ke liye neeche diye gaye form ka istemal karein ya social media par hum se jud jaayein.
-      </p>
-      <!-- Contact form can be added here -->
-    </div>
-  </section>
-  
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 ModernSite. All rights reserved.</p>
+  <footer id="contact">
+    <p>&copy; 2025 APK Uploader. All rights reserved.</p>
   </footer>
   
-  <!-- Back to Top Button -->
-  <button id="backToTop" onclick="scrollToTop()">&uarr;</button>
-  
-  <!-- JavaScript for Interactive Features -->
+  <!-- JavaScript for Upload Interaction and Smooth Scrolling -->
   <script>
-    // Hide loader on page load
-    window.addEventListener('load', () => {
-      document.getElementById('loader').classList.add('hidden');
-    });
-    
-    // Change header style on scroll and show Back to Top button
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-    
-    // Smooth scroll back to top
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Smooth scrolling to section
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
+  
+    // Upload container interactions for drag-and-drop
+    const uploadContainer = document.getElementById('uploadContainer');
+    const fileInput = document.getElementById('fileInput');
+    const progressBar = document.getElementById('progressBar');
+    const uploadMessage = document.getElementById('uploadMessage');
+
+    // Highlight container on drag over
+    uploadContainer.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadContainer.classList.add('dragover');
+    });
+    
+    // Remove highlight on drag leave
+    uploadContainer.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      uploadContainer.classList.remove('dragover');
+    });
+    
+    // Handle file drop
+    uploadContainer.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadContainer.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if(files.length) {
+        simulateUpload(files[0]);
+      }
+    });
+    
+    // Handle file select via input click
+    fileInput.addEventListener('change', (e) => {
+      if(e.target.files.length) {
+        simulateUpload(e.target.files[0]);
+      }
+    });
+    
+    // Simulate file upload with progress bar update
+    function simulateUpload(file) {
+      // Validate file type (only allow .apk)
+      if(!file.name.endsWith('.apk')) {
+        uploadMessage.textContent = 'Only APK files are allowed!';
+        return;
+      }
+      
+      uploadMessage.textContent = `Uploading ${file.name}...`;
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 20;
+        if(progress > 100) {
+          progress = 100;
+          clearInterval(interval);
+          uploadMessage.textContent = 'Upload Complete!';
+          // Here, further JS code would handle the actual file processing and display.
+        }
+        progressBar.style.width = progress + '%';
+      }, 400);
+    }
+    
+    // Intersection Observer for scroll reveal effect on cards and sections
+    const revealElements = document.querySelectorAll('.uploads-section h2, .upload-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.style.animation = 'fadeIn 1s forwards';
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    revealElements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
