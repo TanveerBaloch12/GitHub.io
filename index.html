@@ -1,92 +1,72 @@
-<header>
-  <h1 class="logo">SRK.COM</h1>
-  <div class="search-box">
-    <input type="text" placeholder="Search APKs...">
-    <button>Search</button>
-  </div>
-</header>
-.logo {
-  font-size: 32px;
-  color: #2c3e50;
-  font-weight: bold;
-}
-.search-box {
-  max-width: 300px; /* Fixed Size */
-  background: #f8f9fa;
-  border-radius: 25px;
-  padding: 8px;
-}
-.search-box input {
-  border: none;
-  background: transparent;
-  padding: 5px;
-}
-<div class="apk-grid">
-  <div class="apk-card">
-    <img src="capcut.jpg" alt="CapCut Pro">
-    <div class="apk-info">
-      <h3>CapCut Pro APK</h3>
-      <p>No Watermark • All Features Unlocked</p>
-      <a href="capcut-details.html" class="view-details">View Details</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK.COM - Download Apps</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Thodi custom styling */
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Site Name and Search Bar -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">SRK.COM</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search apps" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <!-- Apps Ki Grid -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- App 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="Capcut Pro" class="card-img-top" alt="App 1">
+                    <div class="card-body">
+                        <h5 class="Capcut Pro Free">App 1</h5>
+                        <a href="#" class="https://www.mediafire.com/file/hseiqe1dufgsih0/capcut_latest_.apk/file">Download</a>
+                    </div>
+                </div>
+            </div>
+            <!-- App 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="app2.jpg" class="card-img-top" alt="App 2">
+                    <div class="card-body">
+                        <h5 class="card-title">App 2</h5>
+                        <a href="#" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+            <!-- App 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="app3.jpg" class="card-img-top" alt="App 3">
+                    <div class="card-body">
+                        <h5 class="card-title">App 3</h5>
+                        <a href="#" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Aur apps yahan add kar sakte ho -->
+        </div>
     </div>
-  </div>
-  <!-- Add More APKs Here -->
-</div>
-.apk-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-.apk-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-.apk-card:hover {
-  transform: translateY(-5px); /* Hover Effect */
-}
-<div class="details-page">
-  <img src="capcut-banner.jpg" class="apk-banner">
-  <h1>CapCut Pro APK</h1>
-  <div class="info-section">
-    <h2>📦 Details</h2>
-    <p>Version: 10.5.0 | Size: 200MB | Updated: 2025</p>
-    <h2>✨ Features</h2>
-    <ul>
-      <li>No Watermark</li>
-      <li>4K Export</li>
-    </ul>
-    <h2>🔒 Security</h2>
-    <p>100% Virus-Free • SSL Encrypted</p>
-    <a href="https://mediafire.com/your-link" class="download-btn">Download Now</a>
-  </div>
-</div>
-<footer>
-  <p>© 2025 SRK.COM - All Rights Reserved</p>
-  <div class="footer-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms</a>
-  </div>
-</footer>
-footer {
-  background: #2c3e50;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-.footer-links a {
-  color: #bdc3c7;
-  margin: 0 10px;
-}
-SRK.COM-Repo/
-├── html/
-│   ├── index.html          (Homepage)
-│   ├── capcut-details.html (Details Page)
-│   ├── css/
-│   │   └── style.css       (Styling)
-│   └── images/             (APK Banners/Icons)
-└── README.md
-<!-- privacy.html -->
-<h2>Privacy Policy</h2>
-<p>We never collect your data. APKs are from trusted sources.</p>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2023 SRK.COM. All rights reserved.</p>
+    </footer>
+</body>
+</html>
