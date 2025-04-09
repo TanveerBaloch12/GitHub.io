@@ -1,176 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRK.COM - Free APK Zone</title>
-    <style>
-        /* Original Design from Screenshot */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRK.COM - Free APK Zone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            background: #f0f2f5;
-        }
+    body {
+      background: #f0f2f5;
+    }
 
-        /* Header */
-        .header {
-            background: #fff;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
+    .header {
+      background: #fff;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
 
-        .logo {
-            font-size: 24px;
-            color: #333;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+    .logo {
+      font-size: 26px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
 
-        .search-bar {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            overflow: hidden;
-        }
+    .search-bar {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+    }
 
-        .search-bar input {
-            flex: 1;
-            border: none;
-            padding: 10px 15px;
-            outline: none;
-        }
+    .search-bar input {
+      flex: 1;
+      border: none;
+      padding: 10px 15px;
+      outline: none;
+    }
 
-        .search-bar button {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+    .search-bar button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
 
-        /* APK Cards (Original Screenshot Style) */
-        .apk-grid {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 apps/row like screenshot */
-            gap: 15px;
-        }
+    h2 {
+      padding: 20px 20px 5px;
+      color: #333;
+    }
 
-        .apk-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    .apk-grid {
+      padding: 10px 20px 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
 
-        .apk-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
+    .apk-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
 
-        .apk-info {
-            padding: 15px;
-        }
+    .apk-card:hover {
+      transform: translateY(-5px);
+    }
 
-        .apk-name {
-            color: #333;
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
+    .apk-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
 
-        .apk-size {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
+    .apk-info {
+      padding: 15px;
+    }
 
-        .download-btn {
-            display: block;
-            background: #28a745;
-            color: white;
-            text-align: center;
-            padding: 8px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
+    .apk-name {
+      color: #333;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-    </style>
+    .apk-size {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .download-btn {
+      display: block;
+      background: #28a745;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <div class="logo">SRK.COM</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search APKs...">
-            <button>Search</button>
-        </div>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">SRK.COM</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search APKs...">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <!-- Pro APKs Section -->
+  <h2>Pro APKs</h2>
+  <div class="apk-grid">
+    <!-- CapCut Pro -->
+    <div class="apk-card">
+      <img src="https://photos.app.goo.gl/oKqkKPshsTM3sYur5" alt="CapCut Pro" class="apk-img">
+      <div class="apk-info">
+        <div class="apk-name">CapCut Pro</div>
+        <div class="apk-size">152MB • v12.5.0</div>
+        <a href="#" class="download-btn">Download</a>
+      </div>
     </div>
 
-    <!-- Pro Apps Section -->
-    <div class="apk-grid">
-        <!-- CapCut Pro -->
-        <div class="apk-card">
-            <img src="https://i.ibb.co/4T2Y7hL/capcut-pro.jpg" alt="CapCut Pro" class="apk-img">
-            <div class="apk-info">
-                <div class="apk-name">CapCut Pro</div>
-                <div class="apk-size">152MB • v12.5.0</div>
-                <a href="#" class="download-btn">Download</a>
-            </div>
-        </div>
+    <!-- Netflix Free -->
+    <div class="apk-card">
+      <img src="https://photos.app.goo.gl/asouwnE7GpLU8MfR6" alt="Netflix Free" class="apk-img">
+      <div class="apk-info">
+        <div class="apk-name">Netflix Free</div>
+        <div class="apk-size">78MB • v8.2.1</div>
+        <a href="#" class="download-btn">Download</a>
+      </div>
+    </div>
+  </div>
 
-        <!-- Netflix Free -->
-        <div class="apk-card">
-            <img src="https://i.ibb.co/0nQz7JX/netflix-free.jpg" alt="Netflix Free" class="apk-img">
-            <div class="apk-info">
-                <div class="apk-name">Netflix Free</div>
-                <div class="apk-size">78MB • v8.2.1</div>
-                <a href="#" class="download-btn">Download</a>
-            </div>
-        </div>
+  <!-- Trending APKs Section -->
+  <h2>Trending APKs</h2>
+  <div class="apk-grid">
+    <!-- Instagram -->
+    <div class="apk-card">
+      <img src="https://photos.app.goo.gl/8L7XTcbivDEn1Tmu5" alt="Instagram" class="apk-img">
+      <div class="apk-info">
+        <div class="apk-name">Instagram</div>
+        <div class="apk-size">45MB • v289.0</div>
+        <a href="#" class="download-btn">Download</a>
+      </div>
     </div>
 
-    <!-- Trending Apps Section -->
-    <div class="apk-grid">
-        <!-- Instagram -->
-        <div class="apk-card">
-            <img src="https://i.ibb.co/2sbXrWx/instagram.jpg" alt="Instagram" class="apk-img">
-            <div class="apk-info">
-                <div class="apk-name">Instagram</div>
-                <div class="apk-size">45MB • v289.0</div>
-                <a href="#" class="download-btn">Download</a>
-            </div>
-        </div>
-
-        <!-- Spotify -->
-        <div class="apk-card">
-            <img src="https://i.ibb.co/5KjX4yN/spotify.jpg" alt="Spotify" class="apk-img">
-            <div class="apk-info">
-                <div class="apk-name">Spotify</div>
-                <div class="apk-size">85MB • v8.9.42</div>
-                <a href="#" class="download-btn">Download</a>
-            </div>
-        </div>
+    <!-- Spotify -->
+    <div class="apk-card">
+      <img src="https://photos.app.goo.gl/z6k6nihsQMsuxbX88" alt="Spotify" class="apk-img">
+      <div class="apk-info">
+        <div class="apk-name">Spotify</div>
+        <div class="apk-size">85MB • v8.9.42</div>
+        <a href="#" class="download-btn">Download</a>
+      </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        © 2025 SRK.COM - All Rights Reserved
-    </div>
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 SRK.COM - All Rights Reserved
+  </div>
 </body>
 </html>
