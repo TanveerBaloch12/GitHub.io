@@ -3,66 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advanced Modern Website</title>
-  <!-- Google Font for improved typography -->
+  <title>Dynamic & Modern Website</title>
+  <!-- Google Fonts for better typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Global Reset and Base Styles */
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
-      background: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
       color: #333;
+      overflow-x: hidden;
     }
-    /* Header with Gradient Background and Shadow */
-    header {
-      background: linear-gradient(45deg, #6D5BBA, #8D58BF);
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 3rem;
-    }
-    /* Navigation Bar with Interactive Hover Effects */
-    nav {
+    /* Loader Animation */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
       background: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    nav ul {
       display: flex;
-      list-style: none;
+      align-items: center;
       justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .spinner {
+      border: 6px solid rgba(0, 0, 0, 0.1);
+      border-top: 6px solid #6D5BBA;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    /* Sticky Navbar with Transformation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+      transition: padding 0.3s, background 0.3s;
+      padding: 20px 0;
+    }
+    header.scrolled {
       padding: 10px 0;
+      background: rgba(255, 255, 255, 1);
     }
-    nav ul li {
-      margin: 0 20px;
+    nav {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    nav ul li a {
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #6D5BBA;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+    .nav-links li {
+      margin-left: 30px;
+    }
+    .nav-links li a {
       text-decoration: none;
       color: #333;
-      padding: 8px 16px;
-      transition: background 0.3s, color 0.3s;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    nav ul li a:hover {
-      background: #6D5BBA;
-      color: #fff;
-      border-radius: 5px;
+    .nav-links li a:hover {
+      color: #6D5BBA;
     }
-    /* Hero Section with Background Image, Overlay and Animations */
+    /* Hero Section with Parallax-Look Effect */
     .hero {
       position: relative;
-      height: 500px;
-      background: url('https://via.placeholder.com/1600x500') no-repeat center center/cover;
+      height: 100vh;
+      background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    .hero::before {
+    .hero::after {
       content: '';
       position: absolute;
       top: 0;
@@ -72,61 +114,76 @@
       background: rgba(0, 0, 0, 0.4);
     }
     .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      z-index: 1;
       text-align: center;
       color: #fff;
+      animation: fadeIn 1.2s ease-out forwards;
+      opacity: 0;
     }
-    .hero-content h2 {
-      font-size: 3rem;
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    .hero h1 {
+      font-size: 4rem;
       margin-bottom: 20px;
-      animation: fadeInDown 1s ease-in-out;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      animation: fadeInUp 1s ease-in-out;
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
-    /* Button Style with Hover Animation */
     .btn {
-      padding: 12px 24px;
+      padding: 15px 30px;
       background: #6D5BBA;
       color: #fff;
-      text-decoration: none;
-      font-weight: bold;
+      border: none;
       border-radius: 30px;
-      transition: background 0.3s, transform 0.3s;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
     }
     .btn:hover {
       background: #8D58BF;
       transform: scale(1.05);
     }
-    /* Section Padding for Content Areas */
-    .section {
-      padding: 60px 20px;
+    /* Section Styling */
+    section {
+      padding: 80px 20px;
     }
-    /* Responsive Cards Section */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #6D5BBA;
+    }
+    /* Dynamic Cards with Hover Effects */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
-      margin-top: 30px;
     }
     .card {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.3s;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: cardFade 0.8s forwards;
     }
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.5s; }
+    .card:nth-child(3) { animation-delay: 0.7s; }
     .card img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
     }
     .card-body {
@@ -134,105 +191,151 @@
     }
     .card-body h3 {
       margin-bottom: 10px;
-      font-size: 1.5rem;
+      color: #333;
     }
-    /* Footer with Solid Background */
-    .footer {
+    .card-body p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+    @keyframes cardFade {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background: #6D5BBA;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+    #backToTop:hover {
+      background: #8D58BF;
+    }
+    /* Footer */
+    footer {
       background: #333;
       color: #fff;
       text-align: center;
       padding: 40px 20px;
     }
-    /* Keyframe Animations */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translate(-50%, -60%);
-      }
-      to {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-      }
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translate(-50%, -40%);
-      }
-      to {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-      }
-    }
-    /* Media Queries for Responsiveness */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      .hero {
-        height: 350px;
-      }
-      .hero-content h2 {
-        font-size: 2rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <h1>Advanced Modern Website</h1>
-  </header>
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Portfolio</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <!-- Hero Section -->
-  <div class="hero">
-    <div class="hero-content">
-      <h2>Welcome to the Future</h2>
-      <p>Explore our innovative design solutions that elevate your online presence.</p>
-      <a href="#" class="btn">Learn More</a>
-    </div>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
   </div>
-  <!-- Services Section -->
-  <section class="section">
+  
+  <!-- Sticky Header and Navbar -->
+  <header id="header">
+    <nav>
+      <div class="logo">ModernSite</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Embrace the Future</h1>
+      <p>Experience dynamic design that leaves a lasting impression.</p>
+      <button class="btn" onclick="document.getElementById('about').scrollIntoView()">Discover More</button>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 40px;">Our Services</h2>
+      <h2 class="section-title">About Us</h2>
+      <p style="text-align: center; max-width: 800px; margin: auto;">
+        Humari team innovation aur creativity se bhari hui hai. Hum aise designs banate hain jo visual impact ke sath sath user experience ko bhi elevate karte hain.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Features / Cards Section -->
+  <section id="features" style="background: #fff;">
+    <div class="container">
+      <h2 class="section-title">Our Features</h2>
       <div class="cards">
         <div class="card">
-          <img src="https://via.placeholder.com/400x200" alt="Service 1">
+          <img src="https://via.placeholder.com/400x180" alt="Feature 1">
           <div class="card-body">
-            <h3>Service One</h3>
-            <p>Creative strategies tailored to boost your business growth.</p>
+            <h3>Interactive Design</h3>
+            <p>Dynamic animations and smooth transitions that captivate your audience.</p>
           </div>
         </div>
         <div class="card">
-          <img src="https://via.placeholder.com/400x200" alt="Service 2">
+          <img src="https://via.placeholder.com/400x180" alt="Feature 2">
           <div class="card-body">
-            <h3>Service Two</h3>
-            <p>Modern designs that captivate and engage your audience.</p>
+            <h3>Responsive Layout</h3>
+            <p>Adaptive grid and flexible components for any screen size.</p>
           </div>
         </div>
         <div class="card">
-          <img src="https://via.placeholder.com/400x200" alt="Service 3">
+          <img src="https://via.placeholder.com/400x180" alt="Feature 3">
           <div class="card-body">
-            <h3>Service Three</h3>
-            <p>Innovative technology integrated with artistic design.</p>
+            <h3>Modern Aesthetics</h3>
+            <p>Bold typography, vibrant colors, and appealing visuals that resonate.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Footer Section -->
-  <footer class="footer">
-    <p>&copy; 2025 Advanced Modern Website. All rights reserved.</p>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p style="text-align: center; max-width: 800px; margin: auto;">
+        Hum se contact karne ke liye neeche diye gaye form ka istemal karein ya social media par hum se jud jaayein.
+      </p>
+      <!-- Contact form can be added here -->
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ModernSite. All rights reserved.</p>
   </footer>
+  
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()">&uarr;</button>
+  
+  <!-- JavaScript for Interactive Features -->
+  <script>
+    // Hide loader on page load
+    window.addEventListener('load', () => {
+      document.getElementById('loader').classList.add('hidden');
+    });
+    
+    // Change header style on scroll and show Back to Top button
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    
+    // Smooth scroll back to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
