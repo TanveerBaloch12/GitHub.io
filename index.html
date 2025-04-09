@@ -1,160 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRK.COM - Free APK Zone</title>
-    <style>
-        /* CSS Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header Section */
-        header {
-            background: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 48px;
-            color: #000000;
-            font-weight: bold;
-        }
-
-        .search-box {
-            display: flex;
-            gap: 10px;
-        }
-
-        .search-box input {
-            padding: 10px;
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .search-box button {
-            padding: 10px 20px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* APK Grid Section */
-        .apk-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 30px;
-        }
-
-        .apk-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .apk-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .apk-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .apk-card h3 {
-            margin: 15px 0;
-        }
-
-        .view-details {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        /* Details Page Styles */
-        .detail-container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-        }
-
-        .apk-banner {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .download-btn {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            padding: 15px;
-            background: #28a745;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 25px;
-        }
-
-        /* Footer Section */
-        footer {
-            background: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <h1 class="logo">SRK.COM</h1>
-        <div class="search-box">
-            <input type="text" placeholder="Search APKs...">
-            <button>Search</button>
-        </div>
-    </header>
-
-    <!-- Homepage APK Grid -->
-    <div class="apk-grid">
-        <!-- APK Card 1 -->
-        <div class="apk-card">
-            <img src="tiktok.jpg" alt="TikTok Pro">
-            <h3>TikTok Pro APK</h3>
-            <p>No Watermark • All Features Unlocked</p>
-            <a href="details.html" class="view-details">View Details</a>
-        </div>
-        <!-- Add more APK cards here -->
+<header>
+  <h1 class="logo">SRK.COM</h1>
+  <div class="search-box">
+    <input type="text" placeholder="Search APKs...">
+    <button>Search</button>
+  </div>
+</header>
+.logo {
+  font-size: 32px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+.search-box {
+  max-width: 300px; /* Fixed Size */
+  background: #f8f9fa;
+  border-radius: 25px;
+  padding: 8px;
+}
+.search-box input {
+  border: none;
+  background: transparent;
+  padding: 5px;
+}
+<div class="apk-grid">
+  <div class="apk-card">
+    <img src="capcut.jpg" alt="CapCut Pro">
+    <div class="apk-info">
+      <h3>CapCut Pro APK</h3>
+      <p>No Watermark • All Features Unlocked</p>
+      <a href="capcut-details.html" class="view-details">View Details</a>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 SRK.COM - All Rights Reserved</p>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms</a>
-        </div>
-    </footer>
-</body>
-</html>
+  </div>
+  <!-- Add More APKs Here -->
+</div>
+.apk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.apk-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+.apk-card:hover {
+  transform: translateY(-5px); /* Hover Effect */
+}
+<div class="details-page">
+  <img src="capcut-banner.jpg" class="apk-banner">
+  <h1>CapCut Pro APK</h1>
+  <div class="info-section">
+    <h2>📦 Details</h2>
+    <p>Version: 10.5.0 | Size: 200MB | Updated: 2025</p>
+    <h2>✨ Features</h2>
+    <ul>
+      <li>No Watermark</li>
+      <li>4K Export</li>
+    </ul>
+    <h2>🔒 Security</h2>
+    <p>100% Virus-Free • SSL Encrypted</p>
+    <a href="https://mediafire.com/your-link" class="download-btn">Download Now</a>
+  </div>
+</div>
+<footer>
+  <p>© 2025 SRK.COM - All Rights Reserved</p>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</footer>
+footer {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.footer-links a {
+  color: #bdc3c7;
+  margin: 0 10px;
+}
+SRK.COM-Repo/
+├── html/
+│   ├── index.html          (Homepage)
+│   ├── capcut-details.html (Details Page)
+│   ├── css/
+│   │   └── style.css       (Styling)
+│   └── images/             (APK Banners/Icons)
+└── README.md
+<!-- privacy.html -->
+<h2>Privacy Policy</h2>
+<p>We never collect your data. APKs are from trusted sources.</p>
