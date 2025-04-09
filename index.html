@@ -1,66 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRK.COM - Download Apps</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Modern Website</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(120deg, #f0f0f0, #ffffff);
+      color: #333;
+    }
+    /* Header Styling */
+    header {
+      background-color: #0077cc;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Navigation Bar */
+    nav {
+      background-color: #005fa3;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+    }
+    nav ul li a:hover {
+      background-color: #003f7f;
+      transition: background 0.3s;
+    }
+    /* Container for Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+      height: 400px;
+      position: relative;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3); /* Overlay for better text visibility */
+    }
+    .hero h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 48px;
+      z-index: 1;
+      text-align: center;
+    }
+    /* Content Cards */
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    /* Responsive Adjustments */
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header with Site Name and Search Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">SRK.COM</a>
-        <form class="form-inline ml-auto">
-            <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search apps" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-success" type="submit">
-                        <i class="fas fa-search"></i> <!-- Search Icon -->
-                    </button>
-                </div>
-            </div>
-        </form>
-    </nav>
-
-    <!-- Apps Grid -->
-    <div class="container mt-4">
-        <div class="row">
-            <!-- App 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card app-card">
-                    <img src="app1.jpg" class="card-img-top" alt="App 1">
-                    <div class="card-body">
-                        <h5 class="Capcut Pro">App 1</h5>
-                        <p class="app-description">
-    <strong>🚀 Unlock Premium Features for Free:</strong><br>
-    - <strong>No Watermark:</strong> Export videos without any branding.<br>
-    - <strong>4K Quality:</strong> Render videos in ultra-HD resolution.<br>
-    - <strong>Advanced Tools:</strong> Access premium filters, transitions, effects, and speed controls.<br>
-    - <strong>Exclusive Assets:</strong> Unlock 1,000+ stickers, fonts, and soundtracks.<br>
-    - <strong>Ad-Free Editing:</strong> Enjoy seamless creativity without interruptions.<br><br>
-    <strong>🔐 Safe & Reliable:</strong><br>
-    - <strong>Virus-Free:</strong> Scanned with top antivirus tools.<br>
-    - <strong>Regular Updates:</strong> Latest version optimized for Android.
-                        </p>
-                        <a href="https://www.mediafire.com/file/hseiqe1dufgsih0/capcut_latest_.apk/file" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Aur apps yahan add kar sakte ho -->
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-light text-center py-3">
-        <p>© 2023 SRK.COM. All rights reserved.</p>
-    </footer>
-
-    <!-- FontAwesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Header Section -->
+  <header>
+    <h1>My Modern Website</h1>
+  </header>
+  
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content Area -->
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Welcome to Our Site</h1>
+    </section>
+    
+    <!-- Grid Content Section -->
+    <section class="content">
+      <div class="card">
+        <h2>Card Title 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
+      </div>
+      <div class="card">
+        <h2>Card Title 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
+      </div>
+      <div class="card">
+        <h2>Card Title 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
+      </div>
+      <div class="card">
+        <h2>Card Title 4</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 My Modern Website</p>
+  </footer>
 </body>
 </html>
