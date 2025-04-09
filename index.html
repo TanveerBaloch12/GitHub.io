@@ -1,120 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Modern Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Modern Website</title>
+  <!-- Google Font for improved typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic Reset */
+    /* Global Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
-      background: linear-gradient(120deg, #f0f0f0, #ffffff);
+      background: #f4f4f4;
       color: #333;
     }
-    /* Header Styling */
+    /* Header with Gradient Background and Shadow */
     header {
-      background-color: #0077cc;
+      background: linear-gradient(45deg, #6D5BBA, #8D58BF);
       color: #fff;
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    /* Navigation Bar */
+    header h1 {
+      font-size: 3rem;
+    }
+    /* Navigation Bar with Interactive Hover Effects */
     nav {
-      background-color: #005fa3;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     nav ul {
       display: flex;
-      justify-content: center;
       list-style: none;
+      justify-content: center;
+      padding: 10px 0;
     }
     nav ul li {
-      margin: 0 15px;
+      margin: 0 20px;
     }
     nav ul li a {
-      display: block;
-      padding: 10px 15px;
       text-decoration: none;
-      color: #fff;
-      font-size: 16px;
+      color: #333;
+      padding: 8px 16px;
+      transition: background 0.3s, color 0.3s;
     }
     nav ul li a:hover {
-      background-color: #003f7f;
-      transition: background 0.3s;
+      background: #6D5BBA;
+      color: #fff;
+      border-radius: 5px;
     }
-    /* Container for Main Content */
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
-    /* Hero Section */
+    /* Hero Section with Background Image, Overlay and Animations */
     .hero {
-      background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
-      height: 400px;
       position: relative;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      overflow: hidden;
+      height: 500px;
+      background: url('https://via.placeholder.com/1600x500') no-repeat center center/cover;
     }
-    .hero::after {
+    .hero::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.3); /* Overlay for better text visibility */
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
     }
-    .hero h1 {
+    .hero-content {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: #fff;
-      font-size: 48px;
-      z-index: 1;
       text-align: center;
+      color: #fff;
     }
-    /* Content Cards */
-    .content {
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    /* Button Style with Hover Animation */
+    .btn {
+      padding: 12px 24px;
+      background: #6D5BBA;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn:hover {
+      background: #8D58BF;
+      transform: scale(1.05);
+    }
+    /* Section Padding for Content Areas */
+    .section {
+      padding: 60px 20px;
+    }
+    /* Responsive Cards Section */
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 30px;
+      margin-top: 30px;
     }
     .card {
       background: #fff;
-      padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
       transition: transform 0.3s;
     }
     .card:hover {
       transform: translateY(-5px);
     }
-    /* Footer Styling */
-    footer {
-      background-color: #333;
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-body h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+    /* Footer with Solid Background */
+    .footer {
+      background: #333;
       color: #fff;
       text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+      padding: 40px 20px;
     }
-    /* Responsive Adjustments */
-    @media(max-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
+    /* Keyframe Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
       }
-      nav ul {
-        flex-direction: column;
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
       }
-      nav ul li {
-        margin: 10px 0;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .hero {
+        height: 350px;
+      }
+      .hero-content h2 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -122,50 +181,58 @@
 <body>
   <!-- Header Section -->
   <header>
-    <h1>My Modern Website</h1>
+    <h1>Advanced Modern Website</h1>
   </header>
-  
   <!-- Navigation Bar -->
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </nav>
-  
-  <!-- Main Content Area -->
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>Welcome to Our Site</h1>
-    </section>
-    
-    <!-- Grid Content Section -->
-    <section class="content">
-      <div class="card">
-        <h2>Card Title 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
-      </div>
-      <div class="card">
-        <h2>Card Title 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
-      </div>
-      <div class="card">
-        <h2>Card Title 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
-      </div>
-      <div class="card">
-        <h2>Card Title 4</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel dui vel lacus posuere fermentum.</p>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Welcome to the Future</h2>
+      <p>Explore our innovative design solutions that elevate your online presence.</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
   </div>
-  
+  <!-- Services Section -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px;">Our Services</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Service 1">
+          <div class="card-body">
+            <h3>Service One</h3>
+            <p>Creative strategies tailored to boost your business growth.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Service 2">
+          <div class="card-body">
+            <h3>Service Two</h3>
+            <p>Modern designs that captivate and engage your audience.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x200" alt="Service 3">
+          <div class="card-body">
+            <h3>Service Three</h3>
+            <p>Innovative technology integrated with artistic design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2025 My Modern Website</p>
+  <footer class="footer">
+    <p>&copy; 2025 Advanced Modern Website. All rights reserved.</p>
   </footer>
 </body>
 </html>
