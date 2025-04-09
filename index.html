@@ -4,58 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRK.COM - Download Apps</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Thodi custom styling */
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header with Site Name and Search Bar -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">SRK.COM</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search apps" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline ml-auto">
+            <div class="input-group">
+                <input class="form-control" type="search" placeholder="Search apps" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-success" type="submit">
+                        <i class="fas fa-search"></i> <!-- Search Icon -->
+                    </button>
+                </div>
+            </div>
         </form>
     </nav>
 
-    <!-- Apps Ki Grid -->
+    <!-- Apps Grid -->
     <div class="container mt-4">
         <div class="row">
             <!-- App 1 -->
             <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="Capcut Pro" class="card-img-top" alt="App 1">
+                <div class="card app-card">
+                    <img src="app1.jpg" class="card-img-top" alt="App 1">
                     <div class="card-body">
-                        <h5 class="Capcut Pro Free">App 1</h5>
-                        <a href="#" class="https://www.mediafire.com/file/hseiqe1dufgsih0/capcut_latest_.apk/file">Download</a>
+                        <h5 class="card-title">App 1</h5>
+                        <p class="card-text">Yeh App 1 ka description hai.</p>
+                        <a href="#" class="btn btn-primary">Download</a>
                     </div>
                 </div>
             </div>
             <!-- App 2 -->
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card app-card">
                     <img src="app2.jpg" class="card-img-top" alt="App 2">
                     <div class="card-body">
                         <h5 class="card-title">App 2</h5>
-                        <a href="#" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-            </div>
-            <!-- App 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="app3.jpg" class="card-img-top" alt="App 3">
-                    <div class="card-body">
-                        <h5 class="card-title">App 3</h5>
+                        <p class="card-text">Yeh App 2 ka description hai.</p>
                         <a href="#" class="btn btn-primary">Download</a>
                     </div>
                 </div>
@@ -66,7 +58,10 @@
 
     <!-- Footer -->
     <footer class="bg-light text-center py-3">
-        <p>&copy; 2023 SRK.COM. All rights reserved.</p>
+        <p>© 2023 SRK.COM. All rights reserved.</p>
     </footer>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
